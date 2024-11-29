@@ -1,33 +1,33 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
+type GridValue = undefined | 0|1
+
+type GridItem = [[GridValue, GridValue, GridValue],[GridValue, GridValue, GridValue],[GridValue, GridValue, GridValue]]
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [user, changeUser] = useState<0|1>(0)
+  const [filledFields, setFilledFields] = useState<GridItem>([[undefined, undefined, undefined], [undefined, undefined, undefined],[undefined, undefined, undefined]])
+
+  const onCellClick = (i:number,j:number) => {
+    const changedFields = structuredClone(filledFields)
+    changedFields[i][j] = user
+    setFilledFields(changedFields)
+    changeUser((prevUser) => (prevUser === 0 ? 1 : 0));
+  }
+
+  console.log({filledFields})
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className='tic-tac-box'>
+        <table>
+          <tbody>
+            {filledFields.map((row, i) => <tr key={i}>{row.map((column, j) => <td onClick={ () => onCellClick(i,j)} key={j}>{column === undefined ? '': column ? 'O' : 'X'}</td>)}</tr>)}
+          </tbody>
+        </table>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
