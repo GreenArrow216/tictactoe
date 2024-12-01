@@ -9,6 +9,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  background-color: black;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -26,51 +30,73 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
-
 .tic-tac-box {
   /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   table {
-    border: 1px solid black;
+    border: 1px solid white;
     td {
-      border: 1px solid black;
+      border: 1px solid white;
       width: 150px;
       height: 150px;
     }
+  }
+}
+
+.feather {
+  width: 0;
+  height: 0;
+  opacity: 0; /* Start with zero size and hidden */
+  animation: growSvg 0.25s ease forwards;
+}
+
+.feather.winner-cell {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  animation: bounceSvg 2s ease-in-out infinite;
+}
+
+@keyframes growSvg {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  100% {
+    width: 100px; /* Target width */
+    height: 100px; /* Target height */
+    opacity: 1;
+  }
+}
+
+@keyframes bounceSvg {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5); /* Slightly larger for the bounce effect */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a9e600, 0 0 40px #a9e600, 0 0 50px #a9e600, 0 0 60px #a9e600, 0 0 70px #a9e600;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #e4ff4d, 0 0 40px #e4ff4d, 0 0 50px #e4ff4d, 0 0 60px #e4ff4d, 0 0 70px #e4ff4d, 0 0 80px #e4ff4d;
   }
 }
