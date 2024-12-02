@@ -27,3 +27,9 @@ Welcome to **Tic Tac Toe**, a simple yet robust implementation of the classic ga
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/tic-tac-toe.git
+
+## In future
+1. Will be adding responsiveness.
+2. Score board to see the local state.
+3. Connecting with a Database and save scoreboard forever to tallypoints.
+4. Will be adding scoreboard UI and backend implementation within the end of year.
