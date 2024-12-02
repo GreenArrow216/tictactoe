@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# Tic Tac Toe - A Modern Implementation Following SOLID Principles 🎮
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Tic Tac Toe**, a simple yet robust implementation of the classic game, designed with **SOLID principles** to ensure maintainability, scalability, and clean code architecture. This project demonstrates my **frontend development skills**, focusing on writing clean, modular, and extensible code.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Intuitive UI**: A responsive and minimalist design for an engaging user experience.
+- **Scalable Codebase**: Built with the SOLID design principles in mind to facilitate easy future enhancements.
+- **Frontend Excellence**: Clean and modular code showcasing advanced JavaScript and UI development skills.
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Framework/Library**: [React]
+- **CSS Styling**: [CSS]
+- **Build Tools**: [Vite]
 
-- Configure the top-level `parserOptions` property like this:
+## 🔍 SOLID Principles in Action
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+1. **Single Responsibility Principle (SRP)**: Each component is responsible for a single piece of functionality.
+2. **Open/Closed Principle (OCP)**: Easily extend the app's functionality without modifying existing code.
+3. **Liskov Substitution Principle (LSP)**: Abstractions and interfaces ensure seamless substitutions.
+4. **Interface Segregation Principle (ISP)**: Modular interfaces tailored to specific functionalities.
+5. **Dependency Inversion Principle (DIP)**: Decoupled high-level modules and implementation details.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🎮 How to Play
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/tic-tac-toe.git
