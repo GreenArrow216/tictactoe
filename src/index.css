@@ -36,14 +36,33 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  table {
+  
+}
+
+table {
+  border: 1px solid white;
+  td {
     border: 1px solid white;
-    td {
-      border: 1px solid white;
-      width: 150px;
-      height: 150px;
-    }
+    width: 150px;
+    height: 150px;
   }
+}
+
+.tic-tac-interactive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reset {
+  padding:10px;
+  margin-left: 50px;
+  background-color: rgb(78, 152, 255);
+}
+
+.reset .feather-refresh-ccw {
+  width: 40px;
+  height: 40px;
 }
 
 .feather {
@@ -100,3 +119,5 @@ body {
     text-shadow: 0 0 20px #fff, 0 0 30px #e4ff4d, 0 0 40px #e4ff4d, 0 0 50px #e4ff4d, 0 0 60px #e4ff4d, 0 0 70px #e4ff4d, 0 0 80px #e4ff4d;
   }
 }
+
+
